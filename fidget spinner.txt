@@ -1,0 +1,32 @@
+import turtle
+
+spinner = turtle.Turtle()
+screen = turtle.Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor('black')
+
+# Draw the fidget spinner shape
+spinner.forward(50)
+spinner.right(120)
+spinner.forward(50)
+spinner.right(120)
+spinner.forward(50)
+
+# Move the turtle in a circle
+spinner.speed(20)
+spinner.circle(50)
+
+# Add a counter
+count = 1
+
+# Add the control
+def spin():
+    global count
+    if count > 0:
+        spinner.right(5)
+        count -= 1
+
+# Create the game loop
+while True:
+    screen.listen()
+    screen.onkey(spin, 'space')
